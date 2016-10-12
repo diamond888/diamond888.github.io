@@ -1,0 +1,9 @@
+(function(){
+    angular
+        .module('app',[
+            'ngMaterial',
+            'ngMdIcons',
+            'ui.router',
+            'firebase'
+        ]);
+})();

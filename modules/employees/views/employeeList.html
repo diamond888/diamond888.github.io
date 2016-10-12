@@ -1,0 +1,50 @@
+<md-toolbar md-scroll-shrink>
+    <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Menu" ng-click="toggleSideNav('left');" hide-gt-sm>
+            <ng-md-icon icon="menu"></ng-md-icon>
+        </md-button>
+        Employees
+        <span flex></span>
+        <md-input-container class="md-block" style="top:16px;">
+          <label style="color: #E7F4FE">Search</label>
+          <input ng-model="search" style="color: white; border-color: #E7F4FE">
+        </md-input-container>
+        <ng-md-icon icon="search" style=""></ng-md-icon>
+    </div>
+</md-toolbar>
+
+<md-button class="md-fab md-fab-bottom-right" aria-label="Add" ng-click="add()">
+    <ng-md-icon icon="person_add" style=""></ng-md-icon>
+</md-button>
+
+<md-content flex>
+
+    <div layout="column" layout-align="center center" ng-hide="employees.length" layout-fill>
+      <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+    </div>
+    
+    <md-list flex>
+        <md-list-item md-ink-ripple ng-repeat="employee in employees | filter:search" ng-click="view(employee)">
+            <md-item-content layout="row" layout-align="center center" flex>
+                <div class="inset" flex=20>
+                    <ng-md-icon icon="person" style="fill: #BDBDBD;"></ng-md-icon> {{employee.empno}}
+                </div>
+                <div class="inset" flex=40>
+                    {{employee.lastName}}, {{employee.firstName}} {{employee.midName}}.
+                </div>
+                <div class="inset" flex=10 hide-xs>
+                    {{employee.division}}
+                </div>
+                <div class="inset" flex="30" flex-xs="40" layout="row" layout-align="end center">
+                    <md-button class="md-icon-button" aria-label="Edit" ng-click="edit(employee)">
+                        <ng-md-icon icon="edit"></ng-md-icon>
+                    </md-button>
+                    <md-button class="md-icon-button" aria-label="delete">
+                        <ng-md-icon icon="delete_forever"></ng-md-icon>
+                    </md-button>
+                </div>
+            </md-item-content>
+        </md-list-item>
+    </md-list>
+
+</md-content>
