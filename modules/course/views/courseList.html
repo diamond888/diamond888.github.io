@@ -1,0 +1,63 @@
+<md-toolbar md-scroll-shrink class="md-hue-2">
+    <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Menu" ng-click="toggleSideNav('left');" hide-gt-sm>
+            <ng-md-icon icon="menu"></ng-md-icon>
+        </md-button>
+        Courses
+        <span flex></span>
+        <md-input-container class="md-block" style="top:16px;">
+          <label style="color: #E7F4FE">Search</label>
+          <input ng-model="search" style="color: white; border-color: #E7F4FE">
+        </md-input-container>
+        <ng-md-icon icon="search" style=""></ng-md-icon>
+    </div>
+</md-toolbar>
+
+<!--<md-button class="md-fab md-fab-bottom-right md-primary md-hue-2" aria-label="Add" ng-click="add()">
+    <ng-md-icon icon="note_add" style=""></ng-md-icon>
+</md-button>-->
+
+<!--<md-content flex style="background-color: #EAEAEA;">
+
+    <div layout="column" layout-align="center center" ng-hide="courses.length" layout-fill>
+      <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+    </div>
+
+</md-content>-->
+
+<md-content flex style="background-color: #EAEAEA;" layout-padding>
+    
+    <div layout="column" layout-align="center center" ng-hide="courses.length" layout-fill>
+      <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+    </div>
+    
+    <div class='md-padding' layout="row" layout-wrap layout-align="center center">
+        <md-card style="width: 300px;" ng-repeat="course in courses | filter:search">
+          <img ng-src="{{course.image}}" class="md-card-image" alt="Washed Out">
+            <md-card-title>
+              <md-card-title-text>
+                <span class="md-headline">{{course.title}}</span>
+              </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <md-content style="max-height:200px;">
+                <md-list class="md-dense" style="max-height:300px;">
+                    <md-list-item ng-repeat="topic in course.topics" ng-click="none()">
+                          <!--<div class="md-list-item-text" layout="column">-->
+                              <p>{{topic.topic}}</p>
+                            <!--<h4>{{ item.what }}</h4>
+                            <p>{{ item.notes }}</p>-->
+                          <!--</div>-->
+                    </md-list-item>
+                </md-list>
+                </md-content>
+            </md-card-content>
+        </md-card>
+    </div>
+      
+    
+
+    
+    
+      
+</md-content>

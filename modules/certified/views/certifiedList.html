@@ -1,0 +1,50 @@
+<md-toolbar md-scroll-shrink class="md-hue-2">
+    <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Menu" ng-click="toggleSideNav('left');" hide-gt-sm>
+            <ng-md-icon icon="menu"></ng-md-icon>
+        </md-button>
+        Certified Professionals
+        <span flex></span>
+        <md-input-container class="md-block" style="top:16px;">
+          <label style="color: #E7F4FE">Search</label>
+          <input ng-model="search" style="color: white; border-color: #E7F4FE">
+        </md-input-container>
+        <ng-md-icon icon="search" style=""></ng-md-icon>
+    </div>
+</md-toolbar>
+
+<!--<md-button class="md-fab md-fab-bottom-right md-primary md-hue-2" aria-label="Add" ng-click="add()">
+    <ng-md-icon icon="person_add" style=""></ng-md-icon>
+</md-button>-->
+
+<md-content flex style="background-color: #EAEAEA;">
+
+    <div layout="column" layout-align="center center" ng-hide="certifiedPros.length" layout-fill>
+      <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+    </div>
+    
+    <md-list flex>
+        <md-list-item md-ink-ripple ng-repeat="certified in certifiedPros | filter:search" ng-click="view(certified)">
+            <md-item-content layout="row" layout-align="start center" flex>
+                <div class="inset" flex=20 hide-xs>
+                    <ng-md-icon icon="person" style="fill: #BDBDBD;"></ng-md-icon> {{shortId(certified.$id)}}
+                </div>
+                <div class="inset" flex=40 flex-xs="50">
+                    {{certified.user.lastName}}, {{certified.user.firstName}} {{certified.user.mi}}.
+                </div>
+                <div class="inset" flex=40 hide-xs>
+                    {{certified.title}}
+                </div>
+                <!--<div class="inset" flex="20" flex-xs="40" layout="row" layout-align="end center">
+                    <md-button class="md-icon-button" aria-label="Edit" ng-click="edit(employee)">
+                        <ng-md-icon icon="edit"></ng-md-icon>
+                    </md-button>
+                    <md-button class="md-icon-button" aria-label="delete">
+                        <ng-md-icon icon="delete_forever"></ng-md-icon>
+                    </md-button>
+                </div>-->
+            </md-item-content>
+        </md-list-item>
+    </md-list>
+
+</md-content>

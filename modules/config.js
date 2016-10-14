@@ -1,11 +1,11 @@
 (function(){
     // Initialize Firebase
     var config = {
-        apiKey: "AIzaSyDHCFYaGkhxEwIcjmQ2Dy4NkZniSndEnGM",
-        authDomain: "hrmismirdc.firebaseapp.com",
-        databaseURL: "https://hrmismirdc.firebaseio.com",
-        storageBucket: "hrmismirdc.appspot.com",
-        messagingSenderId: "117799100638"
+        apiKey: "AIzaSyCfmKn1t__51AxxRg2zq8Qrx07AnviVn8A",
+        authDomain: "diamond888-7e31d.firebaseapp.com",
+        databaseURL: "https://diamond888-7e31d.firebaseio.com",
+        storageBucket: "diamond888-7e31d.appspot.com",
+        messagingSenderId: "204012199323"
     };
     firebase.initializeApp(config);
     
@@ -16,17 +16,31 @@
         
         $mdThemingProvider
         .theme('default')
-        .primaryPalette('blue')
-        .accentPalette('blue');
+        .primaryPalette('cyan')
+        .accentPalette('cyan');
         //.warnPalette('red');
         
-        //$urlRouterProvider.otherwise("/employees");
+        $urlRouterProvider.otherwise("/courses");
         
         $stateProvider
-        .state('employees', {
-            url: "/employees",
-            templateUrl: 'modules/employees/views/employeeList.html',
-            controller: 'employeeController'
+        .state('certified', {
+            url: "/certified",
+            templateUrl: 'modules/certified/views/certifiedList.html',
+            controller: 'certifiedController'
+        })
+        .state('courses', {
+            url: "/courses",
+            templateUrl: 'modules/course/views/courseList.html',
+            controller: 'courseController'
+        })
+        .state('about', {
+            url: "/enroll",
+            templateUrl: 'modules/about/views/about.html',
+        })
+        .state('contactus', {
+            url: "/contactus",
+            templateUrl: 'modules/contactus/views/contactUs.html',
+            controller: 'certifiedController'
         })
         
     });

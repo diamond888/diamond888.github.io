@@ -3,9 +3,16 @@
     .module('app')
     .run(run);
     
-    function run($window, $rootScope, $mdToast, $mdSidenav, employeeService){
+    function run($window, $rootScope, $mdToast, $mdSidenav, $state, certifiedService, courseService){
         
-        $rootScope.employees = employeeService;
+        $rootScope.none = function(){}
+        $rootScope.certifiedPros = certifiedService;
+        $rootScope.courses = courseService;
+        $rootScope.$state = $state;
+        
+        /*$rootScope.sideNavActive = function(item){
+            return ($state.current.name == item);
+        }*/
         
         
         $rootScope.toggleSideNav = function(id) {

@@ -1,0 +1,70 @@
+<md-toolbar class="md-hue-2" md-scroll-shrink>
+    <div class="md-toolbar-tools">
+        <ng-md-icon icon="verified_user" style=""></ng-md-icon>
+        &nbsp;
+        Verified
+        <!--<span flex></span>
+        <md-button class="md-icon-button" aria-label="Edit" ng-click="edit(employee)">
+            <ng-md-icon icon="edit"></ng-md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="delete">
+            <ng-md-icon icon="delete_forever"></ng-md-icon>
+        </md-button>-->
+        <span flex></span>
+        <md-button class="md-icon-button" aria-label="delete" ng-click="close()">
+            <ng-md-icon icon="close"></ng-md-icon>
+        </md-button>
+    </div>
+</md-toolbar>
+
+<div layout-padding>
+
+    <div flex layout="column" layout-align="center center" >
+        <div>
+            <h1>{{certified.user.firstName}} {{certified.user.mi}}. {{certified.user.lastName}}</h1>
+        </div>
+        <div flex layout="row" layout-align="center center">
+            <p>Has successfully completed the Diamond 888 Certification requirements and is recognized as a</p>      
+        </div>
+        <div><h3>Certified  <span>{{certified.title}}</span></h3></div>
+    </div>
+
+    <div layout="row">
+        <div flex></div>
+        <div flex layout="row">
+            Certification Date
+        </div>
+        <div flex>
+            {{dateToText(certified.certificationDate)}}
+        </div>
+        <div flex></div>
+    </div>
+
+    <div layout="row">
+        <div flex></div>
+        <div flex layout="row">
+            Valid Through
+        </div>
+        <div flex>
+            {{dateValid(certified.certificationDate)}}
+        </div>
+        <div flex></div>
+    </div>
+    
+</div>
+
+<!--<md-content layout-padding>
+        
+    
+    
+
+    <div layout="row" flex>
+        <div>
+            Valid Through
+        </div>
+        <div>
+            {{dateValid(certified.certificationDate)}}
+        </div>
+    </div>
+
+</md-content>-->

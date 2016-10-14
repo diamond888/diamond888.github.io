@@ -6,12 +6,22 @@
     md-whiteframe="4"
     md-is-locked-open="$mdMedia('gt-sm')">
 
-    <md-toolbar class="md-hue-1">
-        <div class="md-toolbar-tools" style="color: white"> Pay on time </div>
+    <md-toolbar class="md-hue-4">
+        <div class="md-toolbar-tools" style="color: white"> <span style="font-size: 16px">IT Certifications and Training Services</span> </div>
     </md-toolbar>
     <md-content >
-        <md-list class="md-dense" flex ui-sref="employees">
-            <md-list-item md-ink-ripple ng-click="()">
+        <md-list class="md-dense" flex style="color: #757575;">
+            <md-list-item md-ink-ripple ng-click="none()" ui-sref="courses" ng-class="{active: $state.current.name=='courses'}">
+                  <md-item-content layout="row" layout-align="start center">
+                    <div class="inset">
+                        <ng-md-icon icon="book" style=""></ng-md-icon>
+                    </div>
+                    <div class="inset">
+                        Courses &amp; Schedules
+                    </div>
+                  </md-item-content>
+            </md-list-item>
+            <md-list-item md-ink-ripple ng-click="none()" ui-sref="certified" ng-class="{active: $state.current.name=='certified'}">
                   <md-item-content layout="row" layout-align="start center">
                     <div class="inset">
                       <ng-md-icon icon="group" style=""></ng-md-icon>
@@ -21,30 +31,29 @@
                     </div>
                   </md-item-content>
             </md-list-item>
-            <md-list-item md-ink-ripple ng-click="()">
+            <!--<md-list-item md-ink-ripple ng-click="none()" ui-sref="enroll" ng-class="{active: $state.current.name=='enroll'}">
                   <md-item-content layout="row" layout-align="start center">
                     <div class="inset">
-                      <ng-md-icon icon="payment" style=""></ng-md-icon>
-                    </div>
-                    <div class="inset">
-                        Courses
-                    </div>
-                  </md-item-content>
-            </md-list-item>
-            <md-list-item md-ink-ripple ng-click="()">
-                  <md-item-content layout="row" layout-align="start center">
-                    <div class="inset">
-                      <ng-md-icon icon="av_timer" style=""></ng-md-icon>
+                        <ng-md-icon icon="school" style=""></ng-md-icon>
                     </div>
                     <div class="inset">
                         Enroll
                     </div>
                   </md-item-content>
-            </md-list-item>
-            <md-list-item md-ink-ripple ng-click="()">
+            </md-list-item>-->
+            <md-list-item md-ink-ripple ng-click="none()" ui-sref="about" ng-class="{active: $state.current.name=='about'}">
                   <md-item-content layout="row" layout-align="start center">
                     <div class="inset">
-                      <ng-md-icon icon="monetization_on" style=""></ng-md-icon>
+                      <ng-md-icon icon="info_outline" style=""></ng-md-icon>
+                    </div>
+                    <div class="inset">
+                        About
+                    </div>
+                  </md-item-content>
+            </md-list-item><md-list-item md-ink-ripple ng-click="none()" ui-sref="contactus" ng-class="{active: $state.current.name=='contactus'}">
+                  <md-item-content layout="row" layout-align="start center">
+                    <div class="inset">
+                      <ng-md-icon icon="contact_phone" style=""></ng-md-icon>
                     </div>
                     <div class="inset">
                         Contact Us

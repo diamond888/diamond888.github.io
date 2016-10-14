@@ -1,0 +1,108 @@
+
+<form name="form" ng-submit="save()">
+<md-toolbar class="md-hue-2">
+    <div class="md-toolbar-tools">
+        <ng-md-icon icon="person_add"></ng-md-icon>
+        &nbsp;
+        Certify
+        <span flex></span>
+        <md-button aria-label="Go Back" ng-disabled="!form.$valid" type="submit">
+          <ng-md-icon icon="check" ></ng-md-icon>
+          save
+        </md-button>
+    </div>
+</md-toolbar>
+
+<md-content flex layout-padding>
+    
+
+        <div layout-gt-sm="column">
+          <md-input-container class="md-block">
+            <label>Full name</label>
+            <input required ng-model="fullname">
+          </md-input-container>
+        </div>
+    
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Title</label>
+            <input required ng-model="title">
+          </md-input-container>
+
+          <md-input-container>
+            <label>Certification date</label>
+            <md-datepicker md-open-on-focus required ng-model="certificationDate"></md-datepicker>
+          </md-input-container>
+        </div>
+          
+
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm=40>
+            <label>Given name</label>
+            <input required ng-model="user.firstName">
+          </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm=40>
+            <label>Surname</label>
+            <input required ng-model="user.lastName">
+          </md-input-container>
+            
+          <md-input-container class="md-block" flex-gt-sm=20>
+            <label>MI</label>
+            <input required ng-model="user.mi">
+          </md-input-container>
+        </div>
+
+        <div layout-gt-sm="row">
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>Email</label>
+              <input ng-model="user.email" type="email" required>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>Phone</label>
+              <input ng-model="user.phone" type="text" placeholder="+63 999 9999" required>
+            </md-input-container>
+        </div>
+
+        <div layout-gt-sm="column">
+            <md-input-container class="md-block">
+              <label>Address</label>
+              <input required ng-model="user.address.address">
+            </md-input-container>
+
+            <md-input-container class="md-block">
+              <label>Address 2</label>
+              <input ng-model="user.address.address2">
+            </md-input-container>
+        </div>
+
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>City/Town</label>
+            <input ng-model="user.address.city">
+          </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>State/Province</label>
+            <input ng-model="user.address.province">
+          </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Postal Code</label>
+            <input name="postalCode" ng-model="user.postalCode" placeholder="12345" required ng-pattern="/^[0-9]{5}$/" md-maxlength="5">
+            <div ng-messages="form.postalCode.$error" role="alert" multiple>
+              <div ng-message="required" class="my-message">You must supply a postal code.</div>
+              <div ng-message="pattern" class="my-message">That doesn't look like a valid postal
+                code.
+              </div>
+              <div ng-message="md-maxlength" class="my-message">
+                Don't use the long version silly...we don't need to be that specific...
+              </div>
+            </div>
+          </md-input-container>
+        </div>
+    
+
+</md-content>
+</form>

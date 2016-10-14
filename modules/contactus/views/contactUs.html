@@ -1,0 +1,39 @@
+<md-toolbar md-scroll-shrink class="md-hue-2">
+    <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Menu" ng-click="toggleSideNav('left');" hide-gt-sm>
+            <ng-md-icon icon="menu"></ng-md-icon>
+        </md-button>
+        Contact Us
+    </div>
+</md-toolbar>
+
+<md-content flex style="background-color: #EAEAEA;">
+
+    <div layout="column" layout-align="center center" layout-fill>
+        <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" style="position:relative; bottom: 72px">
+            <md-card-title>
+              <md-card-title-text>
+                <span class="md-headline">Diamond 888</span>
+                <span class="md-subhead">IT Certifications and Training Services</span>
+                
+              </md-card-title-text>
+              <md-card-title-media>
+                
+                    <img ng-src="modules/main/views/images/diamond888.png" alt="Description" height="32" style=" width: 72px;position: relative; top: 0px;"/>
+                
+              </md-card-title-media>
+            </md-card-title>
+            <md-card-actions layout="row" layout-align="center center">
+                <md-button aria-label="Facebook" class="md-fab md-primary md-hue-2 md-mini"><a href="https://www.facebook.com/diamond888.solutions/"><ng-md-icon icon="facebook"></ng-md-icon></a></md-button>
+                <md-button aria-label="Email" class="md-fab md-primary md-hue-2 md-mini"><a href="mailto:diamond888.pro@gmail.com"><ng-md-icon icon="google-plus"></ng-md-icon></a></md-button>
+                <md-button aria-label="Call" class="md-fab md-primary md-hue-2 md-mini"><a href="tel:917-638-2294"><ng-md-icon icon="hangouts"></ng-md-icon></a></md-button>
+            </md-card-actions>
+            <md-card-content>
+                <span><ng-md-icon icon="email" ></ng-md-icon> diamond888.pro@gmail.com</span><br/>
+                <span><ng-md-icon icon="phone" ></ng-md-icon> +63 917 638 2294</span>
+            </md-card-content>
+            
+        </md-card>
+    </div>
+
+</md-content>
