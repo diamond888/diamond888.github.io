@@ -23,9 +23,29 @@
 
 <md-content flex style="background-color: #EAEAEA;" layout="column" layout-padding layout-align="start center">    
 
-    <h1>GET TRAINED! GET CERTIFIED! GET HIRED! </h1>
-    <h3> A Training Lab for Professionals</h3>
-    <p><ng-md-icon icon="check" style="fill: #00796B"></ng-md-icon> we bring HandsOn Trainings which provides you remarkable learning experience at a inexpensive cost!</p>
-    <p><ng-md-icon icon="check" style="fill: #00796B"></ng-md-icon> Our mission is to deliver Simply Easy Learning with clear, crisp, and to-the-point trainings on a wide range of technical and non-technical subjects without any preconditions and impediments.</p>
-      
+    <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Extensive Trainings for Professionals</span>
+            <span class="md-subhead">GET TRAINED! GET CERTIFIED! GET HIRED!</span>
+
+          </md-card-title-text>
+          <md-card-title-media>
+
+                <img ng-src="modules/main/views/images/diamond888.png" alt="Description" height="32" style=" width: 72px;position: relative; top: 0px;"/>
+
+          </md-card-title-media>
+        </md-card-title>
+        
+        <md-card-content>
+
+            <p><ng-md-icon icon="check" style="fill: #00796B"></ng-md-icon> we bring HandsOn Trainings which provides you remarkable learning experience at a inexpensive cost!</p>
+            <p><ng-md-icon icon="check" style="fill: #00796B"></ng-md-icon> Our mission is to deliver Simply Easy Learning with clear, crisp, and to-the-point trainings on a wide range of technical and non-technical subjects without any preconditions and impediments.</p>
+
+        </md-card-content>
+
+    </md-card>
+    
+    
+    
 </md-content>
