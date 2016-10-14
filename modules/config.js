@@ -34,7 +34,7 @@
             controller: 'courseController'
         })
         .state('about', {
-            url: "/enroll",
+            url: "/about",
             templateUrl: 'modules/about/views/about.html',
         })
         .state('contactus', {
