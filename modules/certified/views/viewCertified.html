@@ -20,21 +20,28 @@
 <div layout-padding>
 
     <div flex layout="column" layout-align="center center" >
-        <div>
-            <h1>{{certified.user.firstName}} {{certified.user.mi}}. {{certified.user.lastName}}</h1>
+        <div layout="column" layout-align="center center">
+            <span class="md-headline"><center>{{certified.user.firstName}} {{certified.user.mi}}. {{certified.user.lastName}}</center></span>
+            <span class="md-subhead"><center>{{certified.user.email}}</center></span>
         </div>
-        <div flex layout="row" layout-align="center center">
-            <p>Has successfully completed the Diamond 888 Certification requirements and is recognized as a</p>      
-        </div>
-        <div><h3>Certified  <span>{{certified.title}}</span></h3></div>
+    </div>
+    
+    <div flex layout="row" layout-align="center center">
+        <span flex=10></span>
+        <span flex=80><br/><center>Has successfully completed the Diamond 888 Certification requirements and is recognized as a</center></span>
+        <span flex=10></span>
     </div>
 
+    <div layout="row" layout-align="center center">
+        <center><h3>Certified  <span>{{certified.title}}</span></h3></center>
+    </div>
+    
     <div layout="row">
         <span flex></span>
-        <div layout-padding>
-            Certification Date
+        <div>
+            Certification Date &nbsp;&nbsp;
         </div>
-        <div layout-padding>
+        <div>
             {{dateToText(certified.certificationDate)}}
         </div>
         <div flex></div>
@@ -42,10 +49,10 @@
 
     <div layout="row">
         <span flex></span>
-        <div layout-padding>
-            Valid Through
+        <div>
+            Valid Through &nbsp;&nbsp;
         </div>
-        <div layout-padding>
+        <div>
             {{dateValid(certified.certificationDate)}}
         </div>
         <span flex></span>
