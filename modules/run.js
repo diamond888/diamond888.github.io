@@ -14,7 +14,6 @@
             return ($state.current.name == item);
         }*/
         
-        
         $rootScope.toggleSideNav = function(id) {
             $mdSidenav(id).toggle();
         }

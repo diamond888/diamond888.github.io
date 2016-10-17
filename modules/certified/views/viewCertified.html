@@ -30,25 +30,25 @@
     </div>
 
     <div layout="row">
-        <div flex></div>
-        <div flex layout="row">
+        <span flex></span>
+        <div layout-padding>
             Certification Date
         </div>
-        <div flex>
+        <div layout-padding>
             {{dateToText(certified.certificationDate)}}
         </div>
         <div flex></div>
     </div>
 
     <div layout="row">
-        <div flex></div>
-        <div flex layout="row">
+        <span flex></span>
+        <div layout-padding>
             Valid Through
         </div>
-        <div flex>
+        <div layout-padding>
             {{dateValid(certified.certificationDate)}}
         </div>
-        <div flex></div>
+        <span flex></span>
     </div>
     
 </div>

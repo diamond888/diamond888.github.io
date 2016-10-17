@@ -17,14 +17,6 @@
     <ng-md-icon icon="note_add" style=""></ng-md-icon>
 </md-button>-->
 
-<!--<md-content flex style="background-color: #EAEAEA;">
-
-    <div layout="column" layout-align="center center" ng-hide="courses.length" layout-fill>
-      <md-progress-circular md-mode="indeterminate"></md-progress-circular>
-    </div>
-
-</md-content>-->
-
 <md-content flex style="background-color: #EAEAEA;" layout-padding>
     
     <div layout="column" layout-align="center center" ng-hide="courses.length" layout-fill>
@@ -32,7 +24,7 @@
     </div>
     
     <div class='md-padding' layout="row" layout-wrap layout-align="center center">
-        <md-card style="width: 300px;" ng-repeat="course in courses | filter:search">
+        <md-card md-ink-ripple style="width: 300px;" ng-repeat="course in courses | filter:search">
           <img ng-src="{{course.image}}" class="md-card-image" alt="Washed Out">
             <md-card-title>
               <md-card-title-text>

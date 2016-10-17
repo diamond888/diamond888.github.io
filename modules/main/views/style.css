@@ -9,3 +9,11 @@
 a, a:visited {
     text-decoration: none; color: white;
 }
+
+md-card[md-ink-ripple] {
+  position: relative;
+}
+
+md-card:hover {
+  background-color: #FAFAFA;
+}

@@ -11,7 +11,7 @@
     </md-toolbar>
     <md-content >
         <md-list class="md-dense" flex style="color: #757575;">
-            <md-list-item md-ink-ripple ng-click="none()" ui-sref="courses" ng-class="{active: $state.current.name=='courses'}">
+            <md-list-item md-ink-ripple ng-click="toggleSideNav('left');" ui-sref="courses" ng-class="{active: $state.current.name=='courses'}">
                   <md-item-content layout="row" layout-align="start center">
                     <div class="inset">
                         <ng-md-icon icon="book" style=""></ng-md-icon>
@@ -21,7 +21,7 @@
                     </div>
                   </md-item-content>
             </md-list-item>
-            <md-list-item md-ink-ripple ng-click="none()" ui-sref="certified" ng-class="{active: $state.current.name=='certified'}">
+            <md-list-item md-ink-ripple ng-click="toggleSideNav('left');" ui-sref="certified" ng-class="{active: $state.current.name=='certified'}">
                   <md-item-content layout="row" layout-align="start center">
                     <div class="inset">
                       <ng-md-icon icon="group" style=""></ng-md-icon>
@@ -41,7 +41,7 @@
                     </div>
                   </md-item-content>
             </md-list-item>-->
-            <md-list-item md-ink-ripple ng-click="none()" ui-sref="about" ng-class="{active: $state.current.name=='about'}">
+            <md-list-item md-ink-ripple ng-click="toggleSideNav('left');" ui-sref="about" ng-class="{active: $state.current.name=='about'}">
                   <md-item-content layout="row" layout-align="start center">
                     <div class="inset">
                       <ng-md-icon icon="info_outline" style=""></ng-md-icon>
@@ -50,7 +50,7 @@
                         About
                     </div>
                   </md-item-content>
-            </md-list-item><md-list-item md-ink-ripple ng-click="none()" ui-sref="contactus" ng-class="{active: $state.current.name=='contactus'}">
+            </md-list-item><md-list-item md-ink-ripple ng-click="toggleSideNav('left');" ui-sref="contactus" ng-class="{active: $state.current.name=='contactus'}">
                   <md-item-content layout="row" layout-align="start center">
                     <div class="inset">
                       <ng-md-icon icon="contact_phone" style=""></ng-md-icon>
