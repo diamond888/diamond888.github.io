@@ -9,11 +9,15 @@
     </div>
 </md-toolbar>
 
-<!--<md-button class="md-fab md-fab-bottom-right md-primary md-hue-2" aria-label="Add" ng-click="add()">
+<md-button class="md-fab md-fab-bottom-right md-primary md-hue-2" aria-label="Add" ng-click="add()">
     <ng-md-icon icon="note_add" style=""></ng-md-icon>
-</md-button>-->
+</md-button>
 
-<md-content flex style="background-color: #EAEAEA;" layout-padding> 
+<md-content flex style="background-color: #EAEAEA;" layout-padding>
+    
+    <div layout="column" layout-align="center center" ng-hide="partners.length" layout-fill>
+      <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+    </div>
 
     <md-card layout="column" layout-align="center center" layout-padding>
         <span class="md-headline">Industry Partners</span>
