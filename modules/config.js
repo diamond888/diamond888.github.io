@@ -42,6 +42,11 @@
             templateUrl: 'modules/contactus/views/contactUs.html',
             controller: 'certifiedController'
         })
+        .state('partners', {
+            url: "/partners",
+            templateUrl: 'modules/partner/views/partnersList.html',
+            controller: 'partnerController'
+        })
         
     });
     

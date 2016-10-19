@@ -3,37 +3,33 @@
     
     angular
     .module('app')
-    .controller('courseController', courseController);
+    .controller('partnerController', partnerController);
                     
                     
-    function courseController($scope, $rootScope, $mdDialog){
+    function partnerController($scope, $rootScope, $mdDialog){
         
         $scope.add = function(){
             $mdDialog.show({
-              controller: addCourseController,
-              templateUrl: 'modules/course/views/addCourse.html',
+              controller: addPartnerController,
+              templateUrl: 'modules/partner/views/addPartner.html',
               parent: angular.element(document.getElementById('main-container')),
               clickOutsideToClose: true,
               fullscreen: false // Only for -xs, -sm breakpoints.
             })
             
-            function addCourseController($scope, $rootScope, storageService) {
-                $scope.topics = [];
-                
-                
-                
+            function addPartnerController($scope, $rootScope, storageService) {
+
+
                 $scope.save = function() {
                     
-                    var newCourse = {
-                        title: $scope.title,
-                        image: '',
-                        description: $scope.description,
-                        audience: $scope.audience,
-                        prerequisites: $scope.prerequisites,
-                        topics: $scope.topics,
+                    var newPartner = {
+                        title: $scope.name,
+                        image: ''
                     };
                     
-                    var uploadTask = storageService.child('courses/' + $scope.image.name ).put($scope.image);
+                    console.log(newPartner);
+                    
+                    var uploadTask = storageService.child('partners/' + $scope.image.name ).put($scope.image);
                 
                     uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
                     function(snapshot) {
@@ -44,12 +40,12 @@
                         console.log(error);
                     }, function() {
                         // Upload completed successfully, now we can get the download URL
-                        newCourse.image = uploadTask.snapshot.downloadURL;
+                        newPartner.image = uploadTask.snapshot.downloadURL;
                         
-                        console.log(newCourse);
+                        console.log(newPartner);
                         
-                        $rootScope.courses
-                        .$add(newCourse).then(function(ref) {
+                        $rootScope.partners
+                        .$add(newPartner).then(function(ref) {
                             var id = ref.key;
                             console.log("added record with id " + id);
                             $mdDialog.hide();
@@ -58,14 +54,6 @@
                     });
                 }
                 
-                $scope.addTopic = function(){
-                    $scope.topics.push({topic: $scope.topic});
-                    $scope.topic = "";
-                }
-                
-                $scope.removeTopic = function(index){
-                    $scope.topics.splice(index, 1);
-                }
             }
         }
         

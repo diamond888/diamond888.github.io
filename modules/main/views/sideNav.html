@@ -31,26 +31,28 @@
                     </div>
                   </md-item-content>
             </md-list-item>
-            <!--<md-list-item md-ink-ripple ng-click="none()" ui-sref="enroll" ng-class="{active: $state.current.name=='enroll'}">
-                  <md-item-content layout="row" layout-align="start center">
-                    <div class="inset">
-                        <ng-md-icon icon="school" style=""></ng-md-icon>
-                    </div>
-                    <div class="inset">
-                        Enroll
-                    </div>
-                  </md-item-content>
-            </md-list-item>-->
+            <md-divider></md-divider>
             <md-list-item md-ink-ripple ng-click="toggleSideNav('left');" ui-sref="about" ng-class="{active: $state.current.name=='about'}">
                   <md-item-content layout="row" layout-align="start center">
                     <div class="inset">
                       <ng-md-icon icon="info_outline" style=""></ng-md-icon>
                     </div>
                     <div class="inset">
-                        About
+                        About us
                     </div>
                   </md-item-content>
-            </md-list-item><md-list-item md-ink-ripple ng-click="toggleSideNav('left');" ui-sref="contactus" ng-class="{active: $state.current.name=='contactus'}">
+            </md-list-item>
+            <md-list-item md-ink-ripple ng-click="toggleSideNav('left');" ui-sref="partners" ng-class="{active: $state.current.name=='partners'}">
+                  <md-item-content layout="row" layout-align="start center">
+                    <div class="inset">
+                      <ng-md-icon icon="sentiment_very_satisfied" style=""></ng-md-icon>
+                    </div>
+                    <div class="inset">
+                        Our Partners
+                    </div>
+                  </md-item-content>
+            </md-list-item>
+            <md-list-item md-ink-ripple ng-click="toggleSideNav('left');" ui-sref="contactus" ng-class="{active: $state.current.name=='contactus'}">
                   <md-item-content layout="row" layout-align="start center">
                     <div class="inset">
                       <ng-md-icon icon="contact_phone" style=""></ng-md-icon>

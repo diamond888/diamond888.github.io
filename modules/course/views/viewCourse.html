@@ -1,0 +1,49 @@
+<md-toolbar class="md-hue-2" md-scroll-shrink>
+    <div class="md-toolbar-tools">
+        {{course.title}}
+        <span flex></span>
+        <md-button class="md-icon-button" aria-label="delete" ng-click="close()">
+            <ng-md-icon icon="close"></ng-md-icon>
+        </md-button>
+    </div>
+</md-toolbar>
+
+<div layout-padding>
+
+    <div flex layout="column" layout-align="center center" >
+        <div layout="column" layout-align="center center">
+            <span class="md-headline"><center>Description</center></span>
+            <span class="md-subhead">{{course.description}}</span>
+        </div>
+    </div>
+    
+    <div flex layout="column" layout-align="center center" >
+        <div layout="column" layout-align="center center">
+            <span class="md-headline"><center>Audience</center></span>
+            <span class="md-subhead">{{course.audience}}</span>
+        </div>
+    </div>
+    
+    <div flex layout="column" layout-align="center center" >
+        <div layout="column" layout-align="center center">
+            <span class="md-headline"><center>Prerequisites</center></span>
+            <span class="md-subhead">{{course.prerequisites}}</span>
+        </div>
+    </div>
+    
+    <div flex layout="column" >
+        <div layout="column" layout-align="center center">
+            <span class="md-headline"><center>Course Outline</center></span>
+        </div>
+        <md-list class="md-dense">
+            <md-list-item ng-repeat="topic in course.topics" ng-click="none()">
+                  <!--<div class="md-list-item-text" layout="column">-->
+                      <p>{{topic.topic}}</p>
+                    <!--<h4>{{ item.what }}</h4>
+                    <p>{{ item.notes }}</p>-->
+                  <!--</div>-->
+            </md-list-item>
+        </md-list>
+    </div>
+    
+</div>

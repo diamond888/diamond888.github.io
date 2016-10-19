@@ -24,7 +24,7 @@
     </div>
     
     <div class='md-padding' layout="row" layout-wrap layout-align="center center">
-        <md-card md-ink-ripple style="width: 300px;" ng-repeat="course in courses | filter:search">
+        <md-card ng-click="view(course);" md-ink-ripple style="width: 300px;" ng-repeat="course in courses | filter:search">
           <img ng-src="{{course.image}}" class="md-card-image" alt="Washed Out">
             <md-card-title>
               <md-card-title-text>

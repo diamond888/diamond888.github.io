@@ -3,11 +3,12 @@
     .module('app')
     .run(run);
     
-    function run($window, $rootScope, $mdToast, $mdSidenav, $state, certifiedService, courseService){
+    function run($window, $rootScope, $mdToast, $mdSidenav, $state, certifiedService, courseService, partnerService){
         
         $rootScope.none = function(){}
         $rootScope.certifiedPros = certifiedService;
         $rootScope.courses = courseService;
+        $rootScope.partners = partnerService;
         $rootScope.$state = $state;
         
         /*$rootScope.sideNavActive = function(item){

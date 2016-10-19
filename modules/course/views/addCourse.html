@@ -1,96 +1,108 @@
-<form name="form" ng-submit="save()">
 
-<md-toolbar class="md-hue-2">
-    <div class="md-toolbar-tools">
-        <ng-md-icon icon="note_add"></ng-md-icon>
-        &nbsp;
-        Add Course
-        <span flex></span>
-        <md-button aria-label="Go Back" ng-disabled="!form.$valid" type="submit">
-          <ng-md-icon icon="check" ></ng-md-icon>
-          save
-        </md-button>
+
+
+
+<div layout="column">
+    <form name="form" ng-submit="save()">
+        
+        <md-toolbar class="md-hue-2">
+            <div class="md-toolbar-tools">
+                <ng-md-icon icon="note_add"></ng-md-icon>
+                &nbsp;
+                Add Course
+                <span flex></span>
+                <md-button aria-label="Go Back" ng-disabled="!form.$valid" type="submit">
+                  <ng-md-icon icon="check" ></ng-md-icon>
+                  save
+                </md-button>
+            </div>
+        </md-toolbar>
+        
+    <div layout-padding layout-gt-xs="row">
+        <div layout-gt-sm="column">
+
+            <div layout="row">
+              <md-input-container class="md-block">
+                <label>Title</label>
+                <input required ng-model="title">
+              </md-input-container>
+              <md-input-container>
+                  <md-button ngf-select ng-model="image" name="image" ngf-pattern="'image/*'"
+        ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" 
+        ngf-resize="{width: 360, height: 193}" class="md-icon-button md-primary" aria-label="Go Back" ng-click="addImage()">
+                    <ng-md-icon icon="add_a_photo" ></ng-md-icon>
+                  </md-button>
+              </md-input-container>
+            </div>
+
+            <div layout="row">
+                <img ng-show="image" ngf-thumbnail="image || '/thumb.jpg'">
+            </div>
+
+            <div layout="row">
+                <md-input-container>
+                  <label>Description</label>
+                  <textarea required ng-model="description" rows="3" md-select-on-focus></textarea>
+                </md-input-container>
+            </div>
+
+            <div layout="row">
+                <md-input-container>
+                  <label>Audience</label>
+                  <textarea required ng-model="audience" rows="3" md-select-on-focus></textarea>
+                </md-input-container>
+            </div>
+
+            <div layout="row">
+                <md-input-container>
+                  <label>Prerequisites</label>
+                  <textarea required ng-model="prerequisites" rows="3" md-select-on-focus></textarea>
+                </md-input-container>
+            </div>
+
+        </div>
+        
+        <div layout-gt-sm="column">
+            <md-subheader>Outline</md-subheader>
+            <md-list>
+                <md-list-item md-ink-ripple ng-repeat="topic in topics" ng-click="view(certified)">
+                    <md-item-content layout="row" layout-align="center center" flex>
+                        <div class="inset" flex layout="row" layout-align="start center">
+                            {{topic.topic}}
+                        </div>
+                        <div class="inset" flex layout="row" layout-align="end center">
+                            <md-button class="md-icon-button" aria-label="delete" ng-click="removeTopic($index)">
+                                <ng-md-icon icon="delete_forever"></ng-md-icon>
+                            </md-button>
+                        </div>
+                    </md-item-content>
+                </md-list-item>
+            </md-list>
+
+            <form ng-submit="addTopic()">
+            <div layout="row">
+              <md-input-container>
+                <label>Title</label>
+                <input ng-model="topic">
+              </md-input-container>
+              <md-input-container>
+                  <md-button type="submit" class="md-icon-button md-primary" ng-disabled="!topic" aria-label="Go Back">
+                    <ng-md-icon icon="add" ></ng-md-icon>
+                  </md-button>
+              </md-input-container>
+            </div>
+            </form>
+
+        </div>
+        
+        
     </div>
-</md-toolbar>
+    </form>
+</div>
 
-<div flex layout-padding layout-gt-xs="row">
+
+<div layout-padding layout-gt-xs="row">
     
-
-    
-    <div layout-gt-sm="column">
-
-        <div layout="row">
-          <md-input-container class="md-block" flex>
-            <label>Title</label>
-            <input required ng-model="title">
-          </md-input-container>
-          <md-input-container>
-              <md-button ngf-select ng-model="image" name="image" ngf-pattern="'image/*'"
-    ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" 
-    ngf-resize="{width: 360, height: 193}" class="md-icon-button md-primary" aria-label="Go Back" ng-click="addImage()">
-                <ng-md-icon icon="add_a_photo" ></ng-md-icon>
-              </md-button>
-          </md-input-container>
-        </div>
-        
-        <div layout="row">
-            <img ng-show="image" ngf-thumbnail="image || '/thumb.jpg'">
-        </div>
-
-        <div layout="row">
-            <md-input-container class="md-block">
-              <label>Description</label>
-              <textarea required ng-model="description" rows="3" md-select-on-focus></textarea>
-            </md-input-container>
-        </div>
-
-        <div layout="row">
-            <md-input-container class="md-block">
-              <label>Audience</label>
-              <textarea required ng-model="audience" rows="3" md-select-on-focus></textarea>
-            </md-input-container>
-        </div>
-
-        <div layout="row">
-            <md-input-container class="md-block">
-              <label>Prerequisites</label>
-              <textarea required ng-model="prerequisites" rows="3" md-select-on-focus></textarea>
-            </md-input-container>
-        </div>
-        
-</form>  
-
-        <md-subheader>Outline</md-subheader>
-        <md-list>
-            <md-list-item md-ink-ripple ng-repeat="topic in topics" ng-click="view(certified)">
-                <md-item-content layout="row" layout-align="center center" flex>
-                    <div class="inset" flex layout="row" layout-align="start center">
-                        {{topic.topic}}
-                    </div>
-                    <div class="inset" flex layout="row" layout-align="end center">
-                        <md-button class="md-icon-button" aria-label="delete" ng-click="removeTopic($index)">
-                            <ng-md-icon icon="delete_forever"></ng-md-icon>
-                        </md-button>
-                    </div>
-                </md-item-content>
-            </md-list-item>
-        </md-list>
-
-        <form ng-submit="addTopic()">
-        <div layout="row">
-          <md-input-container>
-            <label>Title</label>
-            <input ng-model="topic">
-          </md-input-container>
-          <md-input-container>
-              <md-button type="submit" class="md-icon-button md-primary" ng-disabled="!topic" aria-label="Go Back">
-                <ng-md-icon icon="add" ></ng-md-icon>
-              </md-button>
-          </md-input-container>
-        </div>
-        </form>
-        
-    </div>
 
 </div>
 
