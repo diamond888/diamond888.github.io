@@ -1,23 +1,27 @@
-<md-toolbar md-scroll-shrink class="md-hue-2">
-    <div class="md-toolbar-tools">
-        <md-button class="md-icon-button" aria-label="Menu" ng-click="toggleSideNav('left');" hide-gt-sm>
-            <ng-md-icon icon="menu"></ng-md-icon>
-        </md-button>
-        Our Partners
-        <span flex></span>
-        
-    </div>
-</md-toolbar>
+<div layout="column" layout-fill>
 
-<!--<md-button class="md-fab md-fab-bottom-right md-primary md-hue-2" aria-label="Add" ng-click="add()">
-    <ng-md-icon icon="note_add" style=""></ng-md-icon>
-</md-button>-->
+    <md-toolbar md-scroll-shrink class="md-hue-2">
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Menu" ng-click="toggleSideNav('left');" hide-gt-sm>
+                <ng-md-icon icon="menu"></ng-md-icon>
+            </md-button>
+            Our Partners
+            <span flex></span>
 
-<md-content flex style="background-color: #EAEAEA;" layout-padding>
+        </div>
+    </md-toolbar>
+
+    <!--<md-button class="md-fab md-fab-bottom-right md-primary md-hue-2" aria-label="Add" ng-click="add()">
+        <ng-md-icon icon="note_add" style=""></ng-md-icon>
+    </md-button>-->
     
-    <div layout="column" layout-align="center center" ng-hide="partners.length" layout-fill>
+    <div layout="column" layout-align="center center" ng-hide="partners.length" flex>
       <md-progress-circular md-mode="indeterminate"></md-progress-circular>
     </div>
+
+<md-content style="background-color: #EAEAEA;" layout-padding ng-show="partners.length">
+    
+    
 
     <md-card layout="column" layout-align="center center" layout-padding>
         <span class="md-headline">Industry Partners</span>
@@ -27,10 +31,12 @@
         <div flex class='md-padding' layout-gt-xs="row" layout-wrap layout-align="center center">
             
             <md-card md-ink-ripple style="width:180px; height: 180px;" layout="column" layout-padding layout-align="center center" ng-repeat="partner in partners | filter:search">
-                    <img ng-src="{{partner.image}}" class="md-card-image" alt="Washed Out">
+                    <img style="width: auto; max-height: 160px;" ng-src="{{partner.image}}" class="md-card-image" alt="Washed Out">
             </md-card>
             
         </div>
     </md-card>
     
 </md-content>
+    
+</div>

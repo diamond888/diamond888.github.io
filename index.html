@@ -27,7 +27,6 @@
     <script src="bower_components/angular-messages/angular-messages.min.js"></script>
     <script src="bower_components/angular-material/angular-material.min.js"></script>
     <script src="bower_components/angular-material-icons/angular-material-icons.min.js"></script>
-    <script src="bower_components/ng-file-upload/ng-file-upload-shim.min.js"></script>
     <script src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="bower_components/firebase/firebase.js"></script>
@@ -54,23 +53,17 @@
     
 </head>
 
-<body ng-app="app" ng-cloak>
+<body ng-app="app" ng-cloak layout="column">
     
-    <div layout="column" style="height:100%">
+    <div ng-include="'modules/main/views/headBar.html'" class="shadow" style="z-index: 6"></div>
 
-        <div ng-include="'modules/main/views/headBar.html'" class="shadow" style="z-index: 6"></div>
+    <section layout="row" flex >
 
-        <section layout="row" flex>
-            
-            <div ng-include="'modules/main/views/sideNav.html'"></div>
-            
-            <md-content flex id="main-container">
-                <ui-view layout="column" layout-fill class="shadow"></ui-view>                
-            </md-content>
-        
-        </section>
-        
-    </div>
+        <div ng-include="'modules/main/views/sideNav.html'" class="shadow" style="z-index: 5"></div>
+
+        <md-content flex id="main-container" ui-view layout="column" style="" ></md-content>
+
+    </section>
 
 </body>
 </html>
