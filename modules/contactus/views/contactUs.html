@@ -1,46 +1,50 @@
-<md-toolbar md-scroll-shrink class="md-hue-2">
-    <div class="md-toolbar-tools">
-        <md-button class="md-icon-button" aria-label="Menu" ng-click="toggleSideNav('left');" hide-gt-sm>
-            <ng-md-icon icon="menu"></ng-md-icon>
-        </md-button>
-        Contact Us
-    </div>
-</md-toolbar>
+<div layout="column" layout-fill>
 
-<md-content flex style="background-color: #EAEAEA;">
+    <md-toolbar md-scroll-shrink class="md-hue-2">
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Menu" ng-click="toggleSideNav('left');" hide-gt-sm>
+                <ng-md-icon icon="menu"></ng-md-icon>
+            </md-button>
+            Contact Us
+        </div>
+    </md-toolbar>
 
-    <div layout="column" >
-        <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}">
-            <md-card-title>
-              <md-card-title-text>
-                <span class="md-headline">Diamond 888</span>
-                <span class="md-subhead">IT Certifications and Training Services</span>
-                
-              </md-card-title-text>
-              <md-card-title-media>
-                
-                    <img ng-src="modules/main/views/images/diamond888.png" alt="Description" height="32" style=" width: 72px;position: relative; top: 0px;"/>
-                
-              </md-card-title-media>
-            </md-card-title>
-            
-            <md-card-content>
-                
-                <div layout-gt-xs="row" layout-wrap>
-                    <div flex>
-                        <span><ng-md-icon icon="email" ></ng-md-icon> diamond888.pro@gmail.com</span><br/>
-                        <span><ng-md-icon icon="phone" ></ng-md-icon> +63 917 638 2294</span>
-                    </div flex>
-                    <div layout="row" layout-align="center">
-                        <md-button aria-label="Facebook" class="md-fab md-primary md-hue-2 md-mini"><a href="https://www.facebook.com/diamond888.solutions/"><ng-md-icon icon="facebook"></ng-md-icon></a></md-button>
-                        <md-button aria-label="Email" class="md-fab md-primary md-hue-2 md-mini"><a href="mailto:diamond888.pro@gmail.com"><ng-md-icon icon="google-plus"></ng-md-icon></a></md-button>
-                        <md-button aria-label="Call" class="md-fab md-primary md-hue-2 md-mini"><a href="tel:917-638-2294"><ng-md-icon icon="hangouts"></ng-md-icon></a></md-button>
+    <div layout="column" layout-align="center center" flex style="background-color: #EAEAEA;">
 
+        <div layout="column" layou>
+            <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" style="max-width:532px;">
+                <md-card-title>
+                  <md-card-title-text>
+                    <span class="md-headline">Diamond 888</span>
+                    <span class="md-subhead">IT Certifications and Training Services</span>
+
+                  </md-card-title-text>
+                  <md-card-title-media>
+
+                        <img ng-src="modules/main/views/images/diamond888.png" alt="Description" height="32" style=" width: 72px;position: relative; top: 0px;"/>
+
+                  </md-card-title-media>
+                </md-card-title>
+
+                <md-card-content>
+
+                    <div layout-gt-xs="row" layout-wrap>
+                        <div flex>
+                            <span><ng-md-icon icon="email" ></ng-md-icon> diamond888.pro@gmail.com</span><br/>
+                            <span><ng-md-icon icon="phone" ></ng-md-icon> +63 917 638 2294</span>
+                        </div flex>
+                        <div layout="row" layout-align="center">
+                            <md-button aria-label="Facebook" class="md-fab md-primary md-hue-2 md-mini"><a href="https://www.facebook.com/diamond888.solutions/"><ng-md-icon icon="facebook"></ng-md-icon></a></md-button>
+                            <md-button aria-label="Email" class="md-fab md-primary md-hue-2 md-mini"><a href="mailto:diamond888.pro@gmail.com"><ng-md-icon icon="google-plus"></ng-md-icon></a></md-button>
+                            <md-button aria-label="Call" class="md-fab md-primary md-hue-2 md-mini"><a href="tel:917-638-2294"><ng-md-icon icon="hangouts"></ng-md-icon></a></md-button>
+
+                        </div>
                     </div>
-                </div>
-            </md-card-content>
-            
-        </md-card>
-    </div>
+                </md-card-content>
 
-</md-content>
+            </md-card>
+        </div>
+
+    </div>
+    
+</div>
