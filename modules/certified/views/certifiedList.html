@@ -26,13 +26,13 @@
         <md-list>
             <md-list-item md-ink-ripple ng-repeat="certified in certifiedPros | filter:search" ng-click="view(certified)">
                 <md-item-content layout="row" layout-align="start center" flex>
-                    <div class="inset" flex=20 hide-xs>
+                    <div class="inset" flex=20 flex-xs="0" hide-xs>
                         <ng-md-icon icon="person" style="fill: #BDBDBD;"></ng-md-icon> {{shortId(certified.$id)}}
                     </div>
-                    <div class="inset" flex=40 flex-xs="50">
+                    <div class="inset" flex=40 flex-xs="100">
                         {{certified.user.lastName}}, {{certified.user.firstName}} {{certified.user.mi}}.
                     </div>
-                    <div class="inset" flex=40 hide-xs>
+                    <div class="inset" flex=40 flex-xs="0" hide-xs>
                         {{certified.title}}
                     </div>
                 </md-item-content>
