@@ -19,7 +19,6 @@
             
             function addPartnerController($scope, $rootScope, storageService) {
 
-
                 $scope.save = function() {
                     
                     var newPartner = {
